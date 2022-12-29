@@ -1,0 +1,147 @@
+// const DAY = 'monday';
+// const style = {
+//   backgroundColor: 'azure',
+//   border: '#61dafb 1px solid',
+//   padding: 10,
+//   para: {
+//     backgroundColor: 'antiquewhite'
+//   }
+// };
+
+// * **********************************
+// * ***     KOMPONENT KLASOWY      ***
+// * **********************************
+// class News extends React.Component {
+//   // constructor(props) {
+//   //   super(props);
+//   //   this.state = {
+//   //     date: new Date(),
+//   //     score: 5
+//   //   };
+//   // }
+//   // Można stan umieścić po za konstruktorem jeśli nic więcej się w nim nie dzieje.
+//   state = {
+//     date: new Date(),
+//     score: 5
+//   };
+
+//   componentDidMount() {
+//     let loading = true;
+//     this.setState({ score: 7 }, () => {
+//       // SetState jako drugi argument ma funkcje Callback bo sam SetState jest asynchroniczny.
+//       loading = false;
+//     });
+//   }
+
+//   render() {
+//     const { header, intro } = this.props;
+//     const { score } = this.state;
+//     return(
+//       <div style={style}>
+//       <h2>{header}</h2>
+//       <p style={style.para}>{intro}</p>
+//       <p>{score}</p>
+//     </div>
+//     );
+//   }
+// }
+
+// * **********************************
+// * ***    KOMPONENT FUNKCYJNY     ***
+// * **********************************
+
+// const data = [
+//   { header: 'Nagłówek 1', intro: 'Intro 1' },
+//   { header: 'Nagłówek 2', intro: 'Intro 2' },
+//   { header: 'Nagłówek 3', intro: 'Intro 3' }
+// ];
+
+const posts = [
+  { id: 1, title: 'Pilne: Co to był za dzień!', intro: 'Tego świat jeszcze nie widział' },
+  { id: 2, title: 'Wszyscy zazdroszą Polakom!', intro: 'Takiego clickbajtowego tytułu jeszcze nikt nie wymyślił' },
+  { id: 3, title: 'Adam Małysz Zgolił wąs', intro: 'Po przegranym zakładzie z Piotrem Żyłą nasz mistrz olimpijski zgolił wąsy' }
+];
+
+const style = {
+  backgroundColor: '#2d3436',
+  color: '#b2bec3',
+  content: {
+    backgroundColor: '#e84393',
+    color: '#2d3436'
+  }
+};
+
+const Article = ({ title, intro }) => {
+  return(
+    <div style={style}>
+      <h2>{title}</h2>
+      <p style={style.content}>{intro.length > 25 ? intro.substring(0, 24) + '...' : intro}</p>
+    </div>
+  );
+};
+
+const BlogTile = () => {
+  return(
+    <div>
+      {posts.map((p) => (
+        <Article title={p.title} intro={p.intro} key={p.id}/>
+      ))}
+    </div>
+  );
+};
+
+const Generator = () => {
+  const [ uuid ] = useState(uuidv4());
+  return(
+    <div style={style}>
+      <p>Your Version 4 UUID:</p>
+      <p>{uuid}</p>
+    </div>
+  );
+};
+
+const FcTimer = () => {
+  const [ time, setTime ] = useState(0);
+  useEffect(() => {
+    const interval = setInterval(() => setTime(time => time + 1), 1000);
+    return () => clearInterval(interval);
+  });
+  return(
+    <div>
+      {`This is time from function: ${time}`}
+    </div>
+  );
+};
+
+class ClsTimer extends React.Component {
+  state = {
+    time: 0
+  };
+  timer = 0;
+  componentDidMount() {
+    this.setState({ time: 0}, () => this.timer = this.state.time + 1);
+  }
+  render() {
+    const { time } = this.state;
+    return(
+      <div>
+        {`This is time from class: ${time}`}
+      </div>
+    );
+  }
+}
+
+const checkDay = () => {
+    if(DAY === 'monday') {
+      return(
+        <Fragment>
+          {data.map((element, index) => (
+              <News key={`news-${index}`} header={element.header} intro={element.intro} />
+          ))}
+        </Fragment>
+      );
+    }
+    return(
+      <p>Dziś nie ma news'ów.</p>
+    );
+  };

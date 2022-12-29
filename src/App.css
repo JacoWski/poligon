@@ -1,0 +1,17 @@
+ .App {
+  text-align: left;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.News {
+  background-color: azure;
+  border: #61dafb 1px solid;
+  padding: 10px;
+}
+
+.News p {
+  background-color: antiquewhite;
+}
