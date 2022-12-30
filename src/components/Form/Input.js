@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from 'prop-types';
 
-import { Colors } from "../../common";
+import { Colors } from "common";
 
 const Input = ({ bgColor, color, borderSize, borderRadius, borderColor }) => {
     const styles = {

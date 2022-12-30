@@ -1,6 +1,14 @@
 {
-    "extends": "react-app",
-     "rules": {
-        "semi": ["error", "always"]
-     }
+   "extends": "react-app",
+   "rules": {
+      "semi": ["error", "always"]
+   },
+   "settings": {
+      "import/resolver": {
+         "node": {
+            "paths": ["src"],
+            "extensions": [".js", ".jsx", ".ts", ".tsx"]
+         }
+      }
+   }
 }
