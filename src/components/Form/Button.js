@@ -7,7 +7,7 @@ import { Colors } from "common";
 
 const Placements = ['left', 'right'];
 
-const Button = ({ label, bgColor, color, icon, handler, placement }) => {
+const Button = ({ label, bgColor, color, icon, handler, placement, disabled, textAlign }) => {
     const styles = {
         backgroundColor: bgColor,
         color: color,
@@ -16,12 +16,13 @@ const Button = ({ label, bgColor, color, icon, handler, placement }) => {
         borderRadius: 5,
         width: 'auto',
         cursor: 'pointer',
-        float: !placement ? 'left' : placement
+        float: !placement ? 'left' : placement,
+        textAlign: textAlign
     };
     return (
-        <button style={styles} onClick={handler}>
-            <Icon iconName={icon}/>
-            <span>{label}</span>
+        <button style={styles} onClick={handler} disabled={disabled} >
+            {icon && <Icon iconName={icon}/>}
+            {label}
         </button>
     );
 };
@@ -37,7 +38,8 @@ Button.propType = {
 
 Button.defaultProps = {
     bgColor: Colors.inherit,
-    color: Colors.black
+    color: Colors.black,
+    textAlign: 'center'
 };
 
 export default Button;
