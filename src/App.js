@@ -1,5 +1,6 @@
-import './App.css';
 import React from 'react';
+
+import './App.css';
 import Header from './components/Header';
 import Article from './pages/Articles';
 import Content from './components/Content';
@@ -11,7 +12,7 @@ function App() {
       <Header/>
       <Content>
         <Article/>
-      </Content>      
+      </Content>
       <Footer/>
     </div>
   );

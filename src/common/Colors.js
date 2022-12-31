@@ -8,5 +8,8 @@ export const Colors = {
     carrot: '#e67e22',
     pumpkin: '#d35400',
     wetAsphalt: '#34495e',
-    clouds: '#ecf0f1'
+    clouds: '#ecf0f1',
+    white: '#fff',
+    black: '#000',
+    inherit: 'inherit'
 };

@@ -2,32 +2,42 @@ import React from "react";
 import PropTypes from 'prop-types';
 import * as SolidIcons from '@fortawesome/free-solid-svg-icons';
 
-import Icon from "../Icons/Icon";
-import { Colors } from "../../common";
+import Icon from "components/Icons";
+import { Colors } from "common";
 
-const Button = ({ label, bgColor, color }) => {
+const Placements = ['left', 'right'];
+
+const Button = ({ label, bgColor, color, icon, handler, placement }) => {
     const styles = {
-        backgroundColor: Colors[bgColor],
-        color: Colors[color],
+        backgroundColor: bgColor,
+        color: color,
         border: 'none',
         padding: '10px 15px',
         borderRadius: 5,
-        width: 'auto'
+        width: 'auto',
+        cursor: 'pointer',
+        float: !placement ? 'left' : placement
     };
-    return <button style={styles}><Icon/><span>{label}</span></button>;
+    return (
+        <button style={styles} onClick={handler}>
+            <Icon iconName={icon}/>
+            <span>{label}</span>
+        </button>
+    );
 };
 
 Button.propType = {
     label: PropTypes.string,
     bgColor: PropTypes.oneOf(Colors),
     color: PropTypes.oneOf(Colors),
-    icon: PropTypes.oneOf(SolidIcons)
+    icon: PropTypes.oneOf(SolidIcons),
+    handler: PropTypes.func,
+    placement: PropTypes.oneOf(Placements)
 };
 
 Button.defaultProps = {
-    bgColor: 'wetAsphalt',
-    color: 'clouds',
-    icon: SolidIcons.faUser
+    bgColor: Colors.inherit,
+    color: Colors.black
 };
 
 export default Button;
