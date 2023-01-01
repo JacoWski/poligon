@@ -11,7 +11,7 @@ const posts = [
 
 const Article = () => {
     return(
-        <>
+        <div className="article">
             <Card title={'Pilne: Co to był za dzień!'}
                     intro={'Tego świat jeszcze nie widział'}
                     content={'Po przegranym zakładzie z Piotrem Żyłą nasz mistrz olimpijski zgolił wąsy'}
@@ -20,7 +20,7 @@ const Article = () => {
             {posts.map((e) => (
                 <News key={`news-${e.id}`} header={e.title} intro={e.intro} author={e.author} />
             ))}
-        </>
+        </div>
     );
 };
 

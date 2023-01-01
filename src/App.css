@@ -1,5 +1,8 @@
  .App {
   text-align: left;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 .App-link {
@@ -19,25 +22,19 @@
 .menu {
   float: left;
   width: 10vw;
-}
-
-.menu ul {
-  margin: 0;
-  padding: 0;
-  list-style-type: none;
-}
-
-.menu a {
-  display: block;
+  height: 100%;
 }
 
 .menu button {
-  display: block;
   min-width: 100%;
 }
 
-main {
-  float: right;
-  clear: both;
+.article {
+  float: left;
   width: 90vw;
+}
+
+footer {
+  margin-top: auto;
+  text-align: center;
 }

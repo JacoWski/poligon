@@ -5,9 +5,9 @@ import '../../App.css';
 const Menu = ({ children }) => {
     return(
         <div className="menu">
-            <ul style={{display: 'block'}}>
+            <nav>
                 {children}
-            </ul>
+            </nav>
         </div>
     );
 };

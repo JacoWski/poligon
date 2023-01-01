@@ -6,11 +6,9 @@ import { Button } from "components/Form";
 
 const MenuLink = ({ to, isActive, children, icon }) => {
     return(
-        <li>
-            <a href={to}>
-                <Button label={children} disabled={!isActive} icon={icon} textAlign={'left'} />
-            </a>
-        </li>
+        <a href={to}>
+            <Button label={children} disabled={!isActive} icon={icon} textAlign={'left'} />
+        </a>
     );
 };
 

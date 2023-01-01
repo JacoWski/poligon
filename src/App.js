@@ -12,13 +12,13 @@ function App() {
   return (
     <div className="App">
       <Header/>
-      <Menu>
-        <MenuLink to={'/'} icon={SolidIcons.faHome}>Home</MenuLink>
-        <MenuLink to={'/about'} icon={SolidIcons.faBook}>About</MenuLink>
-        <MenuLink to={'/contact'} icon={SolidIcons.faContactCard} isActive>Contact</MenuLink>
-        <MenuLink to={'/posts'} icon={SolidIcons.faSignsPost}>Posts</MenuLink>
-      </Menu>
       <Content>
+        <Menu>
+          <MenuLink to={'/'} icon={SolidIcons.faHome}>Home</MenuLink>
+          <MenuLink to={'/about'} icon={SolidIcons.faBook}>About</MenuLink>
+          <MenuLink to={'/contact'} icon={SolidIcons.faContactCard} isActive>Contact</MenuLink>
+          <MenuLink to={'/posts'} icon={SolidIcons.faSignsPost}>Posts</MenuLink>
+        </Menu>
         <Article/>
       </Content>
       <Footer/>
