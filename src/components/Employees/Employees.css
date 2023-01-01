@@ -1,0 +1,37 @@
+.emp-body {
+    min-width: 347px;
+    min-height: 233px;
+    background-color: #ecf0f1;
+    box-shadow: 8px 8px 24px -21px rgba(66, 68, 90, 1);
+    border-radius: 10px;
+    margin: 5px;
+    padding: 5px;
+    display: inline-block;
+}
+
+.emp-body div {
+    width: 50%;
+    height: 100%;
+}
+
+.emp-body p {
+    margin: 0;
+}
+
+#left-side {
+    float: left;
+    text-align: right;
+    cursor: pointer;
+}
+
+#left-side p {
+    padding-right: 10px;
+}
+
+#right-side p {
+    padding-right: 10px;
+}
+
+#right-side {
+    float: right;
+}
