@@ -1,0 +1,15 @@
+.user-form-container form input {
+    display: block;
+}
+
+.user-form-container form textarea {
+    display: block;
+}
+
+.label-pointer {
+    cursor: pointer;
+}
+
+.user-form-group input {
+    display: inline !important;
+}

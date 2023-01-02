@@ -3,11 +3,13 @@ import React from "react";
 // import Employees from "components/Employees";
 // import data from 'DataFactory/employeesData';
 import Restaurant from "pages/Restaurant";
+import User from "pages/User";
 
 const Article = () => {
     return(
         <div className="article">
             <Restaurant/>
+            <User/>
             {/* {data.map((e) => (
                 <Employees name={e.name}
                             familyName={e.familyName}
