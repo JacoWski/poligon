@@ -1,8 +1,6 @@
-.user-form-container form input {
-    display: block;
-}
-
-.user-form-container form textarea {
+.user-form-container form input,
+.user-form-container form textarea,
+.user-form-container button {
     display: block;
 }
 
@@ -12,4 +10,9 @@
 
 .user-form-group input {
     display: inline !important;
+}
+
+.warning {
+    margin: 0;
+    color: red;
 }
