@@ -12,18 +12,24 @@ const User = () => {
         document.getElementById(event.target.name).remove();
     };
     const handleGenderChange = (event) => {
-        if (event.target.name === 'men') womenRef.current.checked = false;
-        if (event.target.name === 'women') menRef.current.checked = false;
+        if (event.target.value === 'men') womenRef.current.checked = false;
+        if (event.target.value === 'women') menRef.current.checked = false;
     };
     const handleInvalidSubmit = (event) => {
         document.getElementsByName(event.target.name)[0].style.border = '2px solid red';
         document.getElementById(event.target.name).append('To pole jest wymagane.');
         event.preventDefault();
     };
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        console.log('idzie dlaej');
+        document.getElementsByName('success-msg')[0].style.visibility = 'visible';
+        document.getElementById('user-form').reset();
+    };
 
     return(
         <div className="user-form-container">
-            <form onInvalid ={handleInvalidSubmit}>
+            <form id="user-form" onInvalid ={handleInvalidSubmit} onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="name">Imię</label>
                     <input type={'text'} name='name' required onChange={handleChange}/>
@@ -41,11 +47,11 @@ const User = () => {
                 <span id="bio" className="warning"></span>
                 <div className="user-form-group">
                     <label htmlFor="men" className="label-pointer" onClick={() => menRef.current.click()}>Męższczyzna</label>
-                    <input ref={menRef} type={'radio'} name='men' required onClick={handleGenderChange} onChange={handleChange} />
+                    <input ref={menRef} type={'radio'} value='men' name="gender" required onClick={handleGenderChange} onChange={handleChange} />
                     <label htmlFor="women" className="label-pointer" onClick={() => womenRef.current.click()}>Kobieta</label>
-                    <input ref={womenRef} type={'radio'} name='women' required onClick={handleGenderChange} onChange={handleChange} />
+                    <input ref={womenRef} type={'radio'} value='women' name="gender" onClick={handleGenderChange} onChange={handleChange} />
                 </div>
-                <span id='men' className="warning"></span>
+                <span id='gender' className="warning"></span>
                 <div className="user-form-group">
                     <label htmlFor="accept" className="label-pointer" onClick={() => acceptRef.current.click()}>Akceptuje regulamin</label>
                     <input ref={acceptRef} type={'checkbox'} name='accept' required onChange={handleChange} />
@@ -53,6 +59,7 @@ const User = () => {
                 <span id='accept' className="warning"></span>
                 <button type="submit">Wyślij</button>
             </form>
+            <p name="success-msg" style={{visibility: 'hidden'}}>Dziękujemy za wysłanie</p>
         </div>
     );
 };
