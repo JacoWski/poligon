@@ -1,0 +1,7 @@
+.formik-form input {
+    display: block;
+}
+
+.formik-error {
+    color: red;
+}
