@@ -2,16 +2,18 @@ import React from "react";
 
 // import Employees from "components/Employees";
 // import data from 'DataFactory/employeesData';
-import Restaurant from "pages/Restaurant";
-import User from "pages/User";
-import UsersWithFormik from "./UsersWithFormik";
+// import Restaurant from "pages/Restaurant";
+// import User from "pages/User";
+// import UsersWithFormik from "pages/UsersWithFormik";
+import UserReactFormHook from "pages/UserReactFormHook";
 
 const Article = () => {
     return(
         <div className="article">
-            <Restaurant/>
+            {/* <Restaurant/>
             <User/>
-            <UsersWithFormik/>
+            <UsersWithFormik/> */}
+            <UserReactFormHook/>
             {/* {data.map((e) => (
                 <Employees name={e.name}
                             familyName={e.familyName}

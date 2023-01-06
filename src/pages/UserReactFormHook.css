@@ -1,0 +1,9 @@
+.user-form p {
+    color: red;
+    margin: 0;
+}
+
+input[aria-invalid=true],
+textarea[aria-invalid=true] {
+    border-color: red !important;
+}
