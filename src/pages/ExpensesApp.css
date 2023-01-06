@@ -1,0 +1,9 @@
+.tables {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.user-form p {
+    color: red;
+    margin: 0;
+}

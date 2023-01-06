@@ -5,7 +5,8 @@ import React from "react";
 // import Restaurant from "pages/Restaurant";
 // import User from "pages/User";
 // import UsersWithFormik from "pages/UsersWithFormik";
-import UserReactFormHook from "pages/UserReactFormHook";
+// import UserReactFormHook from "pages/UserReactFormHook";
+import ExpensesApp from "pages/ExpensesApp";
 
 const Article = () => {
     return(
@@ -13,7 +14,8 @@ const Article = () => {
             {/* <Restaurant/>
             <User/>
             <UsersWithFormik/> */}
-            <UserReactFormHook/>
+            {/* <UserReactFormHook/> */}
+            <ExpensesApp/>
             {/* {data.map((e) => (
                 <Employees name={e.name}
                             familyName={e.familyName}
