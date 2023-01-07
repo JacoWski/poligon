@@ -7,7 +7,7 @@ import { Colors } from "common";
 
 const Placements = ['left', 'right'];
 
-const Button = ({ label, bgColor, color, icon, handler, placement, disabled, textAlign }) => {
+const Button = React.forwardRef(({ label, bgColor, color, icon, handler, placement, disabled, textAlign, ref }) => {
     const styles = {
         backgroundColor: bgColor,
         color: color,
@@ -20,12 +20,12 @@ const Button = ({ label, bgColor, color, icon, handler, placement, disabled, tex
         textAlign: textAlign
     };
     return (
-        <button style={styles} onClick={handler} disabled={disabled} >
+        <button ref={ref} style={styles} onClick={handler} disabled={disabled} >
             {icon && <Icon iconName={icon}/>}
             {label}
         </button>
     );
-};
+});
 
 Button.propType = {
     label: PropTypes.string,

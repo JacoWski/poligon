@@ -5,7 +5,7 @@ import PropTypes from 'prop-types';
 
 const Icon = ({ iconName }) => {
     return(
-        <FontAwesomeIcon icon={iconName} style={{marginRight: 5}} fixedWidth/>
+        <FontAwesomeIcon icon={iconName} style={{marginRight: 0}} fixedWidth/>
     );
 };
 

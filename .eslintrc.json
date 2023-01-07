@@ -1,7 +1,9 @@
 {
    "extends": "react-app",
    "rules": {
-      "semi": ["error", "always"]
+      "semi": ["error", "always"],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "off"
    },
    "settings": {
       "import/resolver": {
