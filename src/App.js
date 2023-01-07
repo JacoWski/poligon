@@ -1,4 +1,5 @@
-import React, { createRef, useEffect } from 'react';
+// import React, { createRef, useEffect } from 'react';
+import React from 'react';
 import * as SolidIcons from '@fortawesome/free-solid-svg-icons';
 
 import './App.css';
@@ -10,15 +11,15 @@ import { Menu, MenuLink} from 'components/Menu';
 // import RefButton from 'components/RefButton';
 
 function App() {
-  const btnRef = createRef();
-  const colorChange = () => {
-    btnRef.current.style.backgroundColor = 'red';
-    btnRef.current.style.color = 'white';
-  };
-  useEffect(() => {
-    const element = btnRef.current;
-    element.addEventListener("mouseenter", colorChange);
-  });
+  // const btnRef = createRef();
+  // const colorChange = () => {
+  //   btnRef.current.style.backgroundColor = 'red';
+  //   btnRef.current.style.color = 'white';
+  // };
+  // useEffect(() => {
+  //   const element = btnRef.current;
+  //   element.addEventListener("mouseenter", colorChange);
+  // });
   return (
     <div className="App">
       <Header/>
