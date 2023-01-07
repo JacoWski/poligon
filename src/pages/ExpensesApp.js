@@ -20,20 +20,19 @@ const ExpensesApp = () => {
             income.push(data);
             setIncome(income);
         }
-        console.log(data);
     };
     const ERROR_MSG = 'To pole jest wymagane.';
     const deleteRecord = (type, index) => {
         if (type === "Wydatek") {
-            outcome.splice(index);
-            setOutcome(outcome);
+            let temp = outcome.slice();
+            temp.splice(index, 1);
+            setOutcome(temp);
         }
         if (type === "Przychód") {
-            income.splice(index);
-            setIncome(income);
+            let temp = income.slice();
+            temp.splice(index, 1);
+            setIncome(temp);
         }
-        console.log(income);
-        console.log(outcome);
     };
 
     return(
