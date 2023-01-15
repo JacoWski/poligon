@@ -18,6 +18,7 @@ import ExpensesApp from 'pages/ExpensesApp';
 import Home from 'pages/Home';
 // import NavMenu from 'components/NavMenu';
 import UserContainer from 'components/UserContainer';
+import GoodFromHandler from 'pages/GoodFormHandler';
 // import RefButton from 'components/RefButton';
 
 // const menu = [
@@ -47,15 +48,18 @@ function App() {
             <MenuLink to={'/expenses'} icon={SolidIcons.faHome} isActive>Wydatki</MenuLink>
             <MenuLink to={'/article'} icon={SolidIcons.faBook} isActive>Article</MenuLink>
             <MenuLink to={'/user'} icon={SolidIcons.faContactCard} isActive>User</MenuLink>
+            <MenuLink to={'/user-container'} icon={SolidIcons.faContactCard} isActive>User container</MenuLink>
+            <MenuLink to={'/form'} icon={SolidIcons.faContactCard} isActive>Good Form Handler</MenuLink>
           </Menu>
           {/* <NavMenu menu={menu} show={showNavMenu} />
           <button onClick={() => setNavMenu(!showNavMenu)} >Pokaż menu</button> */}
-          <UserContainer />
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/article' element={<Article/>}/>
             <Route path='/user' element={<UserReactFormHook/>}/>
             <Route path='/expenses' element={<ExpensesApp/>}/>
+            <Route path='/user-container' element={<UserContainer/>}/>
+            <Route path='/form' element={<GoodFromHandler/>}/>
           </Routes>
         </Content>
       </Router>

@@ -1,0 +1,14 @@
+.formBody div {
+    justify-content: center !important;
+    align-items: center !important;
+    margin: auto;
+    display: flex;
+    margin-bottom: 8px;
+}
+
+.btnSubmit {
+    background-color: darkcyan;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 8px;
+}
