@@ -1,5 +1,5 @@
 // import React, { createRef, useEffect } from 'react';
-import React, { useState } from 'react';
+import React from 'react';
 import * as SolidIcons from '@fortawesome/free-solid-svg-icons';
 import {
   BrowserRouter as Router,
@@ -16,14 +16,15 @@ import { Menu, MenuLink} from 'components/Menu';
 import UserReactFormHook from 'pages/UserReactFormHook';
 import ExpensesApp from 'pages/ExpensesApp';
 import Home from 'pages/Home';
-import NavMenu from 'components/NavMenu';
+// import NavMenu from 'components/NavMenu';
+import UserContainer from 'components/UserContainer';
 // import RefButton from 'components/RefButton';
 
-const menu = [
-  { route: '/articles', label: 'Articles'},
-  { route: '/expenses', label: 'Expenses'},
-  { route: '/user', label: 'User'}
-];
+// const menu = [
+//   { route: '/articles', label: 'Articles'},
+//   { route: '/expenses', label: 'Expenses'},
+//   { route: '/user', label: 'User'}
+// ];
 
 function App() {
   // const btnRef = createRef();
@@ -35,7 +36,7 @@ function App() {
   //   const element = btnRef.current;
   //   element.addEventListener("mouseenter", colorChange);
   // });
-  const [showNavMenu, setNavMenu] = useState(false);
+  // const [showNavMenu, setNavMenu] = useState(false);
   return (
     <div className="App">
       <Router>
@@ -47,8 +48,9 @@ function App() {
             <MenuLink to={'/article'} icon={SolidIcons.faBook} isActive>Article</MenuLink>
             <MenuLink to={'/user'} icon={SolidIcons.faContactCard} isActive>User</MenuLink>
           </Menu>
-          <NavMenu menu={menu} show={showNavMenu} />
-          <button onClick={() => setNavMenu(!showNavMenu)} >Pokaż menu</button>
+          {/* <NavMenu menu={menu} show={showNavMenu} />
+          <button onClick={() => setNavMenu(!showNavMenu)} >Pokaż menu</button> */}
+          <UserContainer />
           <Routes>
             <Route path='/' element={<Home/>}/>
             <Route path='/article' element={<Article/>}/>
