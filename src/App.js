@@ -19,6 +19,7 @@ import Home from 'pages/Home';
 // import NavMenu from 'components/NavMenu';
 import UserContainer from 'components/UserContainer';
 import GoodFromHandler from 'pages/GoodFormHandler';
+import UserRegistration from 'pages/UserRegistration';
 // import RefButton from 'components/RefButton';
 
 // const menu = [
@@ -50,6 +51,7 @@ function App() {
             <MenuLink to={'/user'} icon={SolidIcons.faContactCard} isActive>User</MenuLink>
             <MenuLink to={'/user-container'} icon={SolidIcons.faContactCard} isActive>User container</MenuLink>
             <MenuLink to={'/form'} icon={SolidIcons.faContactCard} isActive>Good Form Handler</MenuLink>
+            <MenuLink to={'/registration'} icon={SolidIcons.faContactCard} isActive>Register</MenuLink>
           </Menu>
           {/* <NavMenu menu={menu} show={showNavMenu} />
           <button onClick={() => setNavMenu(!showNavMenu)} >Pokaż menu</button> */}
@@ -60,6 +62,7 @@ function App() {
             <Route path='/expenses' element={<ExpensesApp/>}/>
             <Route path='/user-container' element={<UserContainer/>}/>
             <Route path='/form' element={<GoodFromHandler/>}/>
+            <Route path='/registration' element={<UserRegistration/>}/>
           </Routes>
         </Content>
       </Router>
